@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Main from './pages/Main';
 import StockTicker from "./components/StockTicker";
 import StockDetails  from './components/StockDetails';
+import Footer from "./components/Footer";
 
 
 const App = () => {

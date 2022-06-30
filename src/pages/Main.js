@@ -3,6 +3,7 @@ import { db } from "../firebase";
 import {getDoc, doc} from "firebase/firestore";
 import StockTab from '../components/StockTab';
 import { Link } from 'react-router-dom';
+import { GoSearch } from "react-icons/go";
 
 const Main = () => {
     const [ data, setData ] = useState([]);
@@ -21,20 +22,20 @@ const Main = () => {
 
   return (
     <main className="main-container">
-        <h1>Top 15 Undervalued Stocks</h1>
-        <div className='undervaluedstocks-container'>
-            <section className='section-header'>
-                <p>Symbol</p>
-                <p>Sector</p>
-            </section>
-            <section>
-                {data.map(element => 
-                    <Link to={`/stockdata/${element.Symbol}`} state={data}>
-                        <StockTab symbol={element.Symbol} sector={element.Sector}/>)
-                    </Link>
-                )}
-            </section>
-        </div>
+            <h1>💎Trending stocks in <span style={{color: "gold"}}>WSB💎</span></h1>
+            <div className='undervaluedstocks-container'>
+                <section className='section-header'>
+                    <h3>Symbol</h3>
+                    <h3>Sector</h3>
+                </section>
+                <section>
+                    {data.map(element => 
+                        <Link to={`/stockdata/${element.Symbol}`} state={data}>
+                            <StockTab symbol={element.Symbol} sector={element.Sector}/>
+                        </Link>
+                    )}
+                </section>
+            </div>
     </main> 
   )
 }
